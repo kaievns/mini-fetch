@@ -1,0 +1,29 @@
+{
+  "name": "mini-fetch",
+  "version": "1.0.0",
+  "description": "Mini polyfill for the fetch API",
+  "main": "lib/fetch.js",
+  "scripts": {
+    "test": "tape test/*.js | faucet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MadRabbit/mini-fetch.git"
+  },
+  "keywords": [
+    "fetch",
+    "polyfill",
+    "mini"
+  ],
+  "author": "Nikolay Nemshilov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MadRabbit/mini-fetch/issues"
+  },
+  "homepage": "https://github.com/MadRabbit/mini-fetch#readme",
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "tape": "^4.4.0",
+    "xmlhttprequest": "^1.8.0"
+  }
+}

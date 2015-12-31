@@ -23,4 +23,18 @@ test("fetch", function(t) {
       });
   });
 
+  t.test("happy noppy", function(t) {
+    t.plan(1);
+    nock("http://localhost").get("/test.json")
+      .reply(404, '');
+
+    fetch("/test.json")
+      .then(function(response) {
+        t.equal(response.status, 404);
+      })
+      .catch(function(e) {
+        t.ok(false); // shouldn't be called
+      });
+  });
+
 });

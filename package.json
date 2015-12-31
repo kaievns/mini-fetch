@@ -23,6 +23,7 @@
   "homepage": "https://github.com/MadRabbit/mini-fetch#readme",
   "devDependencies": {
     "faucet": "0.0.1",
+    "nock": "^3.6.0",
     "tape": "^4.4.0",
     "xmlhttprequest": "^1.8.0"
   }

@@ -8,6 +8,8 @@ stuff and don't need the whole thing in your code.
 __NOTE__: not fully compliant with the standard interface, it is a very basic
 `fetch -> then -> catch` implementation.
 
+__NOTE__: falls back to the real deal when a native interface is available
+
 ## Usage
 
 The usual

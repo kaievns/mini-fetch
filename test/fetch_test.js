@@ -7,7 +7,6 @@ global.XMLHttpRequest = XMLHttpRequest;
 
 test("fetch", function(t) {
 
-
   t.test("happy days", function(t) {
     t.plan(1);
 
@@ -20,11 +19,15 @@ test("fetch", function(t) {
       })
       .then(function(json) {
         t.deepEqual(json, [{a: 1}]);
+      })
+      .catch(function(e) {
+        t.ok(false); // shouldn't be called
       });
   });
 
   t.test("happy noppy", function(t) {
     t.plan(1);
+
     nock("http://localhost").get("/test.json")
       .reply(404, '');
 
@@ -34,6 +37,21 @@ test("fetch", function(t) {
       })
       .catch(function(e) {
         t.ok(false); // shouldn't be called
+      });
+  });
+
+  t.test("totally unhappy", function(t) {
+    t.plan(1);
+
+    nock("http://localhost").get("/test.json")
+      .replyWithError("Oh, no!");
+
+    fetch("/test.json")
+      .then(function(response) {
+        t.ok(false); // shouldn't be called
+      })
+      .catch(function(e) {
+        t.equal(e.message, "Oh, no!");
       });
   });
 

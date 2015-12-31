@@ -4,7 +4,8 @@
   "description": "Mini polyfill for the fetch API",
   "main": "lib/fetch.js",
   "scripts": {
-    "test": "tape test/*.js | faucet"
+    "test": "tape test/*.js",
+    "test:dev": "tape test/*.js | faucet"
   },
   "repository": {
     "type": "git",
